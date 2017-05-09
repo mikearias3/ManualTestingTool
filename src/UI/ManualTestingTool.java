@@ -1,0 +1,50 @@
+package UI;
+
+import javax.swing.*;
+
+/**
+ * Created by mikearias on 5/9/17.
+ */
+public class ManualTestingTool {
+    private JTabbedPane tabbedPane;
+    private JPanel panel1;
+    private JTextField nameTextField;
+    private JCheckBox nameLegibleCheckBox;
+    private JButton nameGenerateButton;
+    private JTextField emailTextField;
+    private JCheckBox emailLegibleCheckBox;
+    private JButton emailGenerateButton;
+    private JTextField passwordTextField;
+    private JCheckBox passwordLegibleCheckBox;
+    private JButton passwordGenerateButton;
+    private JTextField numbersTextField;
+    private JCheckBox numbersLegibleCheckBox;
+    private JSpinner nameCharacterCount;
+    private JSpinner emailCharacterCount;
+    private JSpinner passwordCharacterCount;
+    private JSpinner numbersCharacterCount;
+    private JButton numbersGenerateButton;
+    private JTextField alphanumericalTextField;
+    private JCheckBox alphanumericalLegibleCheckBox;
+    private JSpinner alphanumericalCharacterCount;
+    private JButton alphanumericalGenerateButton;
+    private JTextField addressTextField;
+    private JCheckBox addressLegibleCheckBox;
+    private JSpinner addressCharacterCount;
+    private JButton addressGenerateButton;
+    private JTextArea textTextArea;
+    private JCheckBox textLegibleCheckBox;
+    private JSpinner textCharacterCount;
+    private JButton textGenerateButton;
+
+    //TODO: Research possibility of linking email generate method with slipry.
+    //TODO: Name app QA Multitool and add a bike's multitool icon.
+
+    public static void main(String[] args){
+        JFrame frame = new JFrame("Manual Testing Helper");
+        frame.setContentPane(new ManualTestingTool().tabbedPane);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}

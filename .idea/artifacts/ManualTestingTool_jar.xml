@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ManualTestingTool:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ManualTestingTool_jar</output-path>
+    <root id="archive" name="ManualTestingTool.jar">
+      <element id="module-output" name="ManualTestingTool" />
+    </root>
+  </artifact>
+</component>
