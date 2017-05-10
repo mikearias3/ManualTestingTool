@@ -1,6 +1,10 @@
 package UI;
 
+import generators.StringGenerators;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by mikearias on 5/9/17.
@@ -39,6 +43,17 @@ public class ManualTestingTool {
 
     //TODO: Research possibility of linking email generate method with slipry.
     //TODO: Name app QA Multitool and add a bike's multitool icon.
+
+    public ManualTestingTool() {
+        nameGenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name;
+                name = StringGenerators.getName(nameLegibleCheckBox.isSelected(), (Integer)nameCharacterCount.getValue());
+                nameTextField.setText(name);
+            }
+        });
+    }
 
     public static void main(String[] args){
         JFrame frame = new JFrame("Manual Testing Helper");
