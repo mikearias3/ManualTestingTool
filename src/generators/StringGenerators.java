@@ -16,6 +16,7 @@ public class StringGenerators {
     private static Random rng = new Random();
 
     public static String getName(boolean legible, int count) {
+        currentString = null;
         char[] text = new char[count];
         for (int i = 0; i < count; i++)
         {
@@ -33,5 +34,26 @@ public class StringGenerators {
         text[0] = Character.toUpperCase(text[0]);
         currentString = new String(text);
         return currentString;
+    }
+
+    public static String getEmail(boolean legible, Integer count) {
+        currentString = null;
+        char[] text = new char[count];
+        for (int i = 0; i < count; i++)
+        {
+            if (legible) {
+                if ((i+1)%2 == 0) {
+                    text[i] = consonants.charAt(rng.nextInt(consonants.length()));
+                } else {
+                    text[i] = vocals.charAt(rng.nextInt(vocals.length()));
+                }
+            } else {
+                text[i] = characters.charAt(rng.nextInt(characters.length()));
+            }
+        }
+
+        currentString = new String(text);
+
+        return currentString + "@slipry.net";
     }
 }

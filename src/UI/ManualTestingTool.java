@@ -53,6 +53,14 @@ public class ManualTestingTool {
                 nameTextField.setText(name);
             }
         });
+        emailGenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String email;
+                email = StringGenerators.getEmail(emailLegibleCheckBox.isSelected(), (Integer)emailCharacterCount.getValue());
+                emailTextField.setText(email);
+            }
+        });
     }
 
     public static void main(String[] args){
