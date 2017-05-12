@@ -61,6 +61,14 @@ public class ManualTestingTool {
                 emailTextField.setText(email);
             }
         });
+        passwordGenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String password;
+                password = StringGenerators.getPassword(passwordLegibleCheckBox.isSelected(), (Integer)passwordCharacterCount.getValue());
+                passwordTextField.setText(password);
+            }
+        });
     }
 
     public static void main(String[] args){
