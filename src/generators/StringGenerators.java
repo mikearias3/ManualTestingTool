@@ -80,4 +80,17 @@ public class StringGenerators {
 
         return currentString;
     }
+
+    public static String getNumbers(boolean legible, Integer count) {
+        currentString = null;
+        char[] text = new char[count];
+        for (int i = 0; i < count; i++)
+        {
+            text[i] = numbers.charAt(rng.nextInt(numbers.length()));
+        }
+
+        currentString = new String(text);
+
+        return currentString;
+    }
 }

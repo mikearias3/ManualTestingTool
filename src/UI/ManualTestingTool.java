@@ -69,6 +69,14 @@ public class ManualTestingTool {
                 passwordTextField.setText(password);
             }
         });
+        numbersGenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String numbers;
+                numbers = StringGenerators.getNumbers(numbersLegibleCheckBox.isSelected(), (Integer)numbersCharacterCount.getValue());
+                numbersTextField.setText(numbers);
+            }
+        });
     }
 
     public static void main(String[] args){
