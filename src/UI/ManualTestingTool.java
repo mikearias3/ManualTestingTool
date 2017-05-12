@@ -77,6 +77,14 @@ public class ManualTestingTool {
                 numbersTextField.setText(numbers);
             }
         });
+        alphanumericalGenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String alphaNum;
+                alphaNum = StringGenerators.getAlphaNum(alphanumericalLegibleCheckBox.isSelected(), (Integer)alphanumericalCharacterCount.getValue());
+                alphanumericalTextField.setText(alphaNum);
+            }
+        });
     }
 
     public static void main(String[] args){

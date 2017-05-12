@@ -93,4 +93,25 @@ public class StringGenerators {
 
         return currentString;
     }
+
+    public static String getAlphaNum(boolean legible, Integer count) {
+        currentString = null;
+        char[] text = new char[count];
+        for (int i = 0; i < count; i++)
+        {
+            if (legible) {
+                if ((i+1)%2 == 0) {
+                    text[i] = numbers.charAt(rng.nextInt(numbers.length()));
+                } else {
+                    text[i] = characters.charAt(rng.nextInt(characters.length()));
+                }
+            } else {
+                text[i] = alphaNum.charAt(rng.nextInt(alphaNum.length()));
+            }
+        }
+
+        currentString = new String(text);
+
+        return currentString;
+    }
 }
