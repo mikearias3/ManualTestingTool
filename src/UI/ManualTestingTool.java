@@ -40,11 +40,21 @@ public class ManualTestingTool {
     private JCheckBox textLegibleCheckBox;
     private JSpinner textCharacterCount;
     private JButton textGenerateButton;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextArea textArea1;
+    private JTextArea textArea2;
+    private JTextArea textArea3;
+    private JButton generateButton;
+    private JButton clearButton;
+    private JTextArea textArea4;
 
     //TODO: Research possibility of linking email generate method with slipry.
     //TODO: Name app QA Multitool and add a bike's multitool icon.
 
     public ManualTestingTool() {
+        //-- Generator listeners
         nameGenerateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,6 +93,33 @@ public class ManualTestingTool {
                 String alphaNum;
                 alphaNum = StringGenerators.getAlphaNum(alphanumericalLegibleCheckBox.isSelected(), (Integer)alphanumericalCharacterCount.getValue());
                 alphanumericalTextField.setText(alphaNum);
+            }
+        });
+        addressGenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        textGenerateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        //-- Scenarios combinator listeners
+
+        generateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
