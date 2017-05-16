@@ -3,6 +3,9 @@ package UI;
 import generators.StringGenerators;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -58,6 +61,7 @@ public class ManualTestingTool {
                 String name;
                 name = StringGenerators.getName(nameLegibleCheckBox.isSelected(), (Integer)nameCharacterCount.getValue());
                 nameTextField.setText(name);
+                copyToClipboard(name);
             }
         });
         emailGenerateButton.addActionListener(new ActionListener() {
@@ -66,6 +70,7 @@ public class ManualTestingTool {
                 String email;
                 email = StringGenerators.getEmail(emailLegibleCheckBox.isSelected(), (Integer)emailCharacterCount.getValue());
                 emailTextField.setText(email);
+                copyToClipboard(email);
             }
         });
         passwordGenerateButton.addActionListener(new ActionListener() {
@@ -74,6 +79,7 @@ public class ManualTestingTool {
                 String password;
                 password = StringGenerators.getPassword(passwordLegibleCheckBox.isSelected(), (Integer)passwordCharacterCount.getValue());
                 passwordTextField.setText(password);
+                copyToClipboard(password);
             }
         });
         numbersGenerateButton.addActionListener(new ActionListener() {
@@ -82,6 +88,7 @@ public class ManualTestingTool {
                 String numbers;
                 numbers = StringGenerators.getNumbers(numbersLegibleCheckBox.isSelected(), (Integer)numbersCharacterCount.getValue());
                 numbersTextField.setText(numbers);
+                copyToClipboard(numbers);
             }
         });
         alphanumericalGenerateButton.addActionListener(new ActionListener() {
@@ -90,6 +97,7 @@ public class ManualTestingTool {
                 String alphaNum;
                 alphaNum = StringGenerators.getAlphaNum(alphanumericalLegibleCheckBox.isSelected(), (Integer)alphanumericalCharacterCount.getValue());
                 alphanumericalTextField.setText(alphaNum);
+                copyToClipboard(alphaNum);
             }
         });
         textGenerateButton.addActionListener(new ActionListener() {
@@ -100,6 +108,7 @@ public class ManualTestingTool {
                 text = stringGenerator.getText((Integer)textCharacterCount.getValue());
                 textTextArea.setLineWrap(true);
                 textTextArea.setText(text);
+                copyToClipboard(text);
             }
         });
 
@@ -117,6 +126,17 @@ public class ManualTestingTool {
 
             }
         });
+    }
+
+    public void copyToClipboard(String string){
+        StringSelection stringSelection = new StringSelection(string);
+        Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clpbrd.setContents(stringSelection, null);
+        msgbox("Text copied to clipboard!");
+    }
+
+    private void msgbox(String s){
+        JOptionPane.showMessageDialog(null, s);
     }
 
     public static void main(String[] args){
