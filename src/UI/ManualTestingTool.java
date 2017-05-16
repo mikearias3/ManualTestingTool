@@ -32,9 +32,6 @@ public class ManualTestingTool {
     private JCheckBox alphanumericalLegibleCheckBox;
     private JSpinner alphanumericalCharacterCount;
     private JButton alphanumericalGenerateButton;
-    private JTextField addressTextField;
-    private JCheckBox addressLegibleCheckBox;
-    private JSpinner addressCharacterCount;
     private JButton addressGenerateButton;
     private JTextArea textTextArea;
     private JCheckBox textLegibleCheckBox;
@@ -95,16 +92,14 @@ public class ManualTestingTool {
                 alphanumericalTextField.setText(alphaNum);
             }
         });
-        addressGenerateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
         textGenerateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String text;
+                StringGenerators stringGenerator = new StringGenerators();
+                text = stringGenerator.getText((Integer)textCharacterCount.getValue());
+                textTextArea.setLineWrap(true);
+                textTextArea.setText(text);
             }
         });
 

@@ -1,5 +1,7 @@
 package generators;
 
+import helpers.LoremIpsum;
+
 import java.util.Random;
 
 /**
@@ -15,6 +17,7 @@ public class StringGenerators {
     private static String numbers = "0123456789";
     private static String alphaNum = characters + numbers;
     private static Random rng = new Random();
+    private LoremIpsum loremIpsum;
 
     public static String getName(boolean legible, int count) {
         currentString = null;
@@ -113,5 +116,11 @@ public class StringGenerators {
         currentString = new String(text);
 
         return currentString;
+    }
+
+    public String getText(Integer count) {
+        this.loremIpsum = new LoremIpsum();
+
+        return loremIpsum.getWords(count);
     }
 }
