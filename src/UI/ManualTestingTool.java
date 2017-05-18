@@ -1,6 +1,7 @@
 package UI;
 
 import generators.StringGenerators;
+import scenarios.ScenarioGenerator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +9,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by mikearias on 5/9/17.
@@ -40,15 +43,15 @@ public class ManualTestingTool {
     private JCheckBox textLegibleCheckBox;
     private JSpinner textCharacterCount;
     private JButton textGenerateButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextArea textArea1;
-    private JTextArea textArea2;
-    private JTextArea textArea3;
+    private JTextField PrefixTextField;
+    private JTextField Delimiter1TextField;
+    private JTextField Delimiter2TextField;
+    private JTextArea TestedFeatureTextArea;
+    private JTextArea Condition1TextArea;
+    private JTextArea Condition2TextArea;
     private JButton generateButton;
     private JButton clearButton;
-    private JTextArea textArea4;
+    private JTextArea OutputTextArea;
 
     //TODO: Research possibility of linking email generate method with slipry.
     //TODO: Name app QA Multitool and add a bike's multitool icon.
@@ -118,12 +121,18 @@ public class ManualTestingTool {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                List<Set<String>> values;
+                values = ScenarioGenerator.GetListsFromInput(TestedFeatureTextArea.getText(),
+                                                    Condition1TextArea.getText(),
+                                                    Condition2TextArea.getText());
+
+                OutputTextArea.setText(ScenarioGenerator.combineLists(values).toString());
             }
         });
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                OutputTextArea.setText("");
             }
         });
     }
