@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/ManualTestingTool_jar</output-path>
     <root id="archive" name="ManualTestingTool.jar">
       <element id="module-output" name="ManualTestingTool" />
+      <element id="extracted-dir" path="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/lib/guava-21.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
