@@ -40,6 +40,7 @@ public class ScenarioGenerator {
                                                     ).collect(toList());//store all products as list
 
         String text = noDuplicatesInProducts.toString()
+                                            .replace("^,", "")
                                              .replace("[", "")
                                               .replace("]", "\n")
                                                 .replace("^,", "");

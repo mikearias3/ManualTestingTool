@@ -13,7 +13,7 @@ import java.util.*;
 import java.util.List;
 
 /**
- * Created by mikearias on 5/9/17.
+ * Created by mikearias on 5/9/17..
  */
 public class ManualTestingTool {
     private JTabbedPane tabbedPane;
@@ -43,9 +43,6 @@ public class ManualTestingTool {
     private JCheckBox textLegibleCheckBox;
     private JSpinner textCharacterCount;
     private JButton textGenerateButton;
-    private JTextField PrefixTextField;
-    private JTextField Delimiter1TextField;
-    private JTextField Delimiter2TextField;
     private JTextArea TestedFeatureTextArea;
     private JTextArea Condition1TextArea;
     private JTextArea Condition2TextArea;
@@ -133,6 +130,9 @@ public class ManualTestingTool {
             @Override
             public void actionPerformed(ActionEvent e) {
                 OutputTextArea.setText("");
+                TestedFeatureTextArea.setText("");
+                Condition1TextArea.setText("");
+                Condition2TextArea.setText("");
             }
         });
     }
